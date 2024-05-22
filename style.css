@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.form{
+    width: 600px;
+    border: 1px solid #eee;
+    margin: 20px;
+    display: flex;
+}
+.form input[type="text"]{
+    flex-grow: 3;
+    border: 0px;
+    outline: none;
+    padding: 5px 10px;
+}
+.form input[type="submit"]{
+    flex-grow: 1;
+    padding: 7px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+}
+.form input[type="submit"]:hover{
+    background-color: rgb(28, 28, 208);
+    color: #eee;
+}
