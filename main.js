@@ -1,27 +1,13 @@
-const elem = (tag) => document.createElement(tag);
-const text = (message) => document.createTextNode(message);
+const createTask = (message, index) => {
+  return R.pipe(
+    addClass("border"),
+    addClass("p-5"),
+    addClass("mt-10"),
+    attr("data-id", index),
+    append(text(message))
+  )(elem("div"));
+};
 
-const addClass = R.curry((className, element) => {
-  element.classList.add(className);
-  return element;
-});
-
-const append = R.curry((node, element) => {
-  element.appendChild(node);
-  return element;
-});
-
-const attr = R.curry((attrName, attrValue, element) => {
-  element.setAttribute(attrName, attrValue);
-  return element;
-});
-
-const el = R.pipe(
-  addClass("border"),
-  addClass("p-5"),
-  addClass("mt-10"),
-  attr("task_id", 1),
-  append(text("Novi task"))
-)(elem("div"));
+const el = createTask("Prvi task", 1);
 
 document.getElementById("message-list").appendChild(el);
