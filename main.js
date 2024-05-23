@@ -1,8 +1,6 @@
 const createTask = (message, index) => {
   return R.pipe(
-    addClass("border"),
-    addClass("p-5"),
-    addClass("mt-10"),
+    addClass("task-text"),
     attr("data-id", index),
     append(text(message))
   )(elem("p")); // prvo sto ce da uradi jeste da kreira paragraf
@@ -19,10 +17,16 @@ const view = (state) => {
 
 const app = (state, output, dispatch) => {
   R.pipe(clear, append(view(state)))(output);
-
-  const stop = dispatch(() => {
-    stop();
+  console.log("render");
+  dispatch((e) => {
     const newText = getElem("message-text").value;
+    if (newText === "") {
+      getElem("message-text").placeholder = "Your message can't be empty !";
+      getElem("message-text").focus();
+      app(Object.freeze(state), output, dispatch);
+      return;
+    }
+    getElem("message-text").placeholder = "Enter message";
     const newState = [...state, newText];
     getElem("message-text").value = "";
     getElem("message-text").focus();

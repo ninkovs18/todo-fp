@@ -1,44 +1,41 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-.wrapper{
-    width: 600px;
-    border: 1px solid #eee;
-    margin: 20px;
-    padding: 10px;
+.wrapper {
+  width: 600px;
+  border: 1px solid #eee;
+  margin: 20px;
+  padding: 10px;
 }
-.form{
-    display: flex;
+.form {
+  display: flex;
 }
-.form input[type="text"]{
-    flex-grow: 3;
-    border: 0px;
-    outline: none;
-    padding: 5px 10px;
-    border: 1px solid #eee;
+.form input[type="text"] {
+  flex-grow: 3;
+  border: 0px;
+  outline: none;
+  padding: 5px 10px;
+  border: 1px solid #eee;
 }
-.form input[type="submit"]{
-    flex-grow: 1;
-    padding: 7px;
-    border: none;
-    background-color: blue;
-    color: #fff;
-    cursor: pointer;
+.form input[type="submit"] {
+  flex-grow: 1;
+  padding: 7px;
+  border: none;
+  background-color: blue;
+  color: #fff;
+  cursor: pointer;
 }
-.form input[type="submit"]:hover{
-    background-color: rgb(28, 28, 208);
-    color: #eee;
+.form input[type="submit"]:hover {
+  background-color: rgb(28, 28, 208);
+  color: #eee;
 }
-.border{
-    border: 1px solid #eee;
-    border-left: 5px solid blue;
-}
-.p-5{
-    padding: 5px;
-}
-.mt-10{
-    margin-top: 10px;
+.task-text {
+  border: 1px solid #eee;
+  border-left: 5px solid blue;
+  padding: 5px;
+  margin-top: 10px;
+  flex-grow: 2;
 }

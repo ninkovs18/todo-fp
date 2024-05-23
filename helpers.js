@@ -18,10 +18,7 @@ const attr = R.curry((attrName, attrValue, element) => {
 });
 
 const on = R.curry((event, element, fn) => {
-  element.addEventListener(event, fn);
-  return () => {
-    element.removeEventListener(event, fn);
-  };
+  element.addEventListener(event, fn, { once: true });
 });
 
 const clear = R.curry((element) => {
